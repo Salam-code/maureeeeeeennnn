@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Something For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        (function(){
+            emailjs.init("1B1wbx7H0WDOdY6Wm");
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div id="heart-container"></div>
+
+    <div class="main-container">
+
+        <div class="glass-card">
+
+            <!-- STEP 1 -->
+            <div id="step1" class="step active">
+
+                <div class="big-heart">❤️</div>
+
+                <h1>Maureen...</h1>
+
+                <p class="intro-text">
+                    I made something for you.
+                    <br>
+                    And I really hope you like it. 🥹
+                </p>
+
+                <button id="openBtn" class="btn yes-btn">
+                    OPEN IT ❤️
+                </button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+            <div id="step2" class="step">
+
+                <h1 id="typewriter"></h1>
+
+                <button id="continueBtn" class="btn yes-btn">
+                    uhh...Continue😁❤️
+                </button>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+            <div id="step3" class="step">
+
+                <h1 class="question-intro">
+                    So... there's something I've been meaning to ask you.
+                </h1>
+
+                <p class="question">
+                    Maureen, will you officially be my girlfriend? ❤️
+                </p>
+
+                <div class="btn-wrapper">
+
+                    <button id="yesBtn" class="btn yes-btn">
+                        YES ❤️
+                    </button>
+
+                    <button id="noBtn" class="btn no-btn">
+                        NO 🥺
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

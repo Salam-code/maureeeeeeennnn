@@ -1,0 +1,587 @@
+/* =========================
+   GENERAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-pink: #ff4d6d;
+    --secondary-pink: #ff85a1;
+    --light-pink: #fff0f3;
+    --dark-pink: #c9184a;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.main-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+
+    width: min(500px, 100%);
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.37);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    z-index: 10;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.step {
+    display: none;
+
+    animation: fadeIn 0.7s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+
+/* =========================
+   STEP 1
+========================= */
+
+.big-heart {
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.step h1 {
+    color: var(--dark-pink);
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    color: white;
+
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+
+/* =========================
+   STEP 2
+========================= */
+
+#typewriter {
+    color: white;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    min-height: 220px;
+
+    text-align: left;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   STEP 3
+========================= */
+
+.question-intro {
+    color: white !important;
+
+    font-size: 1.3rem !important;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px !important;
+}
+
+.question {
+    color: white;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-wrapper {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.btn {
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.25);
+}
+
+.yes-btn {
+    background-color: var(--primary-pink);
+
+    color: white;
+}
+
+.yes-btn:hover {
+    background-color: var(--dark-pink);
+
+    transform: scale(1.05);
+}
+
+.no-btn {
+    background-color: #6c757d;
+
+    color: white;
+}
+
+.no-btn:hover {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#heart-container {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+
+    color: var(--primary-pink);
+
+    animation: float linear forwards;
+
+    opacity: 0.8;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .glass-card {
+        padding: 30px 20px;
+
+        border-radius: 18px;
+    }
+
+    .step h1 {
+        font-size: 1.7rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    #typewriter {
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        min-height: 250px;
+    }
+
+    .question-intro {
+        font-size: 1.15rem !important;
+    }
+
+    .question {
+        font-size: 1.25rem;
+    }
+
+    .btn-wrapper {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .btn {
+        width: 80%;
+
+        padding: 14px 20px;
+    }
+
+    .big-heart {
+        font-size: 3.5rem;
+    }
+}
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-page {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url('by.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+.success-page .bounce-text {
+    font-size: 2.1rem;
+
+    color: var(--dark-pink);
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.sub-text {
+    color: white;
+
+    margin-top: 20px;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+}
+
+.emoji-cluster {
+    font-size: 2.5rem;
+
+    line-height: 1.6;
+
+    margin-top: 20px;
+}
+
+```css
+/* =========================
+   SUCCESS PAGE — FORCE CENTER
+========================= */
+
+body.success-page {
+    margin: 0;
+    padding: 20px;
+
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url('by.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+
+/* FORCE THE CONTAINER TO THE MIDDLE */
+
+body.success-page .main-container {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: calc(100% - 40px);
+    max-width: 500px;
+
+    padding: 0;
+    margin: 0;
+
+    display: block;
+}
+
+
+/* THE CARD */
+
+body.success-page .glass-card {
+    width: 100%;
+
+    margin: 0;
+    padding: 40px 30px;
+
+    text-align: center;
+
+    display: block;
+}
+
+
+/* EVERYTHING INSIDE THE CARD */
+
+body.success-page .celebration-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* HEART */
+
+body.success-page .big-heart {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+}
+
+
+/* TITLE */
+
+body.success-page .bounce-text {
+    width: 100%;
+
+    margin: 0 0 15px 0;
+
+    text-align: center;
+
+    font-size: 2.1rem;
+
+    line-height: 1.3;
+
+    color: var(--dark-pink);
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+/* MESSAGE */
+
+body.success-page .sub-text {
+    width: 100%;
+
+    margin: 10px 0 0 0;
+
+    padding: 0;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+}
+
+
+/* EMOJIS */
+
+body.success-page .emoji-cluster {
+    width: 100%;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MOBILE SUCCESS PAGE
+========================= */
+
+@media (max-width: 600px) {
+
+    body.success-page {
+        padding: 15px;
+    }
+
+    body.success-page .main-container {
+        width: calc(100% - 30px);
+
+        max-width: 450px;
+    }
+
+    body.success-page .glass-card {
+        padding: 30px 20px;
+    }
+
+    body.success-page .big-heart {
+        font-size: 3.5rem;
+    }
+
+    body.success-page .bounce-text {
+        font-size: 1.8rem;
+    }
+
+    body.success-page .sub-text {
+        font-size: 0.95rem;
+    }
+
+    body.success-page .emoji-cluster {
+        font-size: 2rem;
+    }
+}
+```
